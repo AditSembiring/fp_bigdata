@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Harga Properti</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+            display: flex;
+        }
+    .sidebar {
+        height: 100%;
+    width: 200px;
+    background-color: #333;
+    padding-top: 20px;
+    position: fixed;
+    left: 0;
+    overflow-y: auto; /* Menambahkan overflow-y agar bisa di-scroll */
+    color: white;
+}
+        .sidebar a {
+            padding: 10px 15px;
+            text-decoration: none;
+            font-size: 18px;
+            color: white;
+            display: block;
+        }
+        .sidebar a:hover {
+            background-color: #555;
+        }
+        .content {
+            margin-left: 200px;
+            padding: 20px;
+        }
+        .visualization {
+            margin-bottom: 30px;
+        }
+        .visualization img {
+            max-width: 100%;
+            height: auto;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .visualization h2 {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="sidebar">
+    <a href="#">Home</a>
+    <a href="#">Visualisasi 1</a>
+    <a href="#">Visualisasi 2</a>
+    <a href="#">Visualisasi 3</a>
+</div>
+
+<div class="content">
+    <h1>Harga Properti di Provinsi Jawa Tengah</h1>
+
+    <!-- Visualisasi 1: Regresi Linear Luas Tanah vs Harga -->
+    <div class="visualization">
+        <h2>Regresi Linear Luas Tanah vs Harga</h2>
+        <img src="data:image/png;base64, {{ plot_image1 }}" alt="Visualisasi 1">
+    </div>
+
+    <!-- Visualisasi 2: Jumlah Properti berdasarkan Lokasi -->
+    <div class="visualization">
+        <h2>Jumlah Properti berdasarkan Lokasi</h2>
+        <img src="data:image/png;base64, {{ plot_image2 }}" alt="Visualisasi 2">
+    </div>
+
+    <!-- Visualisasi 3: Heatmap Korelasi Dataset -->
+    <div class="visualization">
+        <h2>Heatmap Korelasi Dataset Harga Properti</h2>
+        <img src="data:image/png;base64, {{ plot_image3 }}" alt="Visualisasi 3">
+    </div>
+
+</div>
+
+</body>
+</html>
